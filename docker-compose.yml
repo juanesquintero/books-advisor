@@ -22,7 +22,7 @@ services:
       - ./api/.env
     ports:
       - 8000:80
-    command: uvicorn app:app --reload --debug --host 0.0.0.0 --port 80
+    command: uvicorn app:app --reload --host 0.0.0.0 --port 80
   
   web:
     container_name: books-advisor-web
@@ -42,4 +42,3 @@ services:
     depends_on:
       - api
     command: npm run start:dev
-
