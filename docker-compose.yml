@@ -1,0 +1,45 @@
+name: books-advisor
+version: '3.8'
+services:
+
+  api:
+    container_name: books-advisor-api
+    restart: on-failure
+    build:
+      context: ./api/
+      target: development
+      dockerfile: ./Dockerfile
+    image: books-advisor-api_dev:1.0.0
+    volumes:
+      - ./api/app:/code/app
+      - ./api/tests:/code/tests
+      - ./api/.env:/code/.env
+      - ./api/run.py:/code/run.py
+      - ./api/config.py:/code/config.py
+      - ./api/.coverage:/code/.coverage
+      - ./api/logs:/code/logs
+    env_file:
+      - ./api/.env
+    ports:
+      - 8000:80
+    command: uvicorn app:app --reload --debug --host 0.0.0.0 --port 80
+  
+  web:
+    container_name: books-advisor-web
+    restart: on-failure
+    image: books-advisor-web_dev:1.0.0
+    build:
+      context: ./web/
+      target: development
+      dockerfile: ./Dockerfile
+    env_file:
+      - ./web/.env
+    ports:
+      - 3000:3000
+    volumes:
+      - ./web:/usr/code
+      - /usr/code/node_modules
+    depends_on:
+      - api
+    command: npm run start:dev
+
