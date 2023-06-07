@@ -6,7 +6,6 @@ import { IBookCardProps } from './BookCard.types';
 
 const BookCard: React.FC<IBookCardProps> = (book: IBookCardProps) => {
 	const { title, description, contributor, author, price, publisher } = book;
-	console.log(book);
 	return (
 		<section className='book-card'>
 			<div>
