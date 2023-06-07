@@ -1,6 +1,6 @@
 import React from 'react';
 import { IButtonProps } from './Button.types';
-import setStyleClass from '@src/app/helpers/setStyleClass';
+import setStyleClass from '@src/app/shared/helpers/setStyleClass';
 
 const Button: React.FC<IButtonProps> = (props: IButtonProps) => {
 	const { text, style, size, type = 'button', ..._props } = props;

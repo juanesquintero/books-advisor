@@ -1,4 +1,4 @@
-import setStyleClass from '@src/app/helpers/setStyleClass';
+import setStyleClass from '@src/app/shared/helpers/setStyleClass';
 import React from 'react';
 import { IInputAtrr, IInputProps } from './Input.types';
 
