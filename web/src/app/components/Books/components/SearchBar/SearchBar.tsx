@@ -9,21 +9,23 @@ import { API_BOOKS_ENDPOINT } from '@app/shared/constants';
 const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
 	const [publisher, setPublisher] = useState<string>('');
 
-	const handleOnSearch = async () => {
-		let path = API_BOOKS_ENDPOINT;
-		if (publisher) {
-			path += `?publisher=${publisher}`;
-		}
-		const filteredBooks = await fetchData(path);
-		onSearch(filteredBooks);
+	const updateBooks = async (path: string) => {
+		onSearch(await fetchData(path));
 	};
 
-	const handleInputChange = (e) => {
+	const handleOnSearch = async () => {
+		let path = API_BOOKS_ENDPOINT;
+		if (publisher.trim()) {
+			path += `?publisher=${publisher}`;
+		}
+		await updateBooks(path);
+	};
+
+	const handleInputChange = async (e) => {
 		const text = e.target.value;
 		setPublisher(text);
-		if (text === '') {
-			setPublisher('');
-			handleOnSearch();
+		if (!text.trim()) {
+			await updateBooks(API_BOOKS_ENDPOINT);
 		}
 	};
 	return (
