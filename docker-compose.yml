@@ -41,4 +41,4 @@ services:
       - /usr/code/node_modules
     depends_on:
       - api
-    command: npm run start:dev
+    command: npm start --host 0.0.0.0
