@@ -11,7 +11,7 @@ from app.routers import ROUTERS
 app = FastAPI(**APP_CONFIG)
 
 # App origins access
-origins = ['http://localhost:4200']
+origins = ['http://localhost:3000']
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,

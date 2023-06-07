@@ -30,7 +30,7 @@ async def fetch_best_sellers(root_path: str, api_key: str):
                 params=params
             )
             response.raise_for_status()
-            data = response.json().get('results'), 
+            data = response.json().get('results') 
             return data
     except httpx.HTTPStatusError:
         return None
