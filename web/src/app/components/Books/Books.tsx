@@ -1,15 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Books.scss';
 import SearchBar from './components/SearchBar/SearchBar';
 import BookCard from './components/BookCard/BookCard';
-import useFetch from '@src/app/shared/hooks/useFetch';
 import { IBook } from './Books.types';
+import { API_BOOKS_ENDPOINT } from '@app/shared/constants';
+import fetchData from '@src/app/shared/helpers/fetchData';
 
 const Books: React.FC = () => {
-	const books = useFetch('/books/best-sellers');
+	const [books, setBooks] = useState<IBook[]>([]);
+	useEffect(() => {
+		const getBooks = async () => {
+			const fetchedBooks = await fetchData(API_BOOKS_ENDPOINT);
+			setBooks(fetchedBooks);
+		};
+
+		getBooks();
+	}, []);
 	return (
 		<>
-			<SearchBar></SearchBar>
+			<SearchBar onSearch={setBooks}></SearchBar>
 			{books && books.length > 0 ? (
 				books.map((book: IBook) => (
 					<div key={book.title} className='books__item'>
@@ -17,7 +26,7 @@ const Books: React.FC = () => {
 					</div>
 				))
 			) : (
-				<></>
+				<p>No books to show :( </p>
 			)}
 		</>
 	);

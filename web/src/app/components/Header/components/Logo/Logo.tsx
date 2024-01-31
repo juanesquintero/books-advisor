@@ -1,4 +1,4 @@
-import { APP_NAME } from '@src/app/constants';
+import { APP_NAME } from '@src/app/shared/constants';
 import React from 'react';
 import './Logo.scss';
 
