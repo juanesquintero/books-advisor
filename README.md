@@ -1,6 +1,6 @@
 # Books Advisor
 
-A Books Advisor is a web application where you can list and visualize the NY Times' best sellers books.
+A Books Advisor is a web application where you can list and visualize the NY Times' best-selling books.
 The project is a mono repo and contains 2 apps; the React Web front-end and Python API back-end.
 
 ## Getting started
@@ -39,11 +39,11 @@ Since the suggested technologies are React and Python, I decided to use the late
 
 
 ### Python 3.11
-Python has increased the support and functionality for types hints (typing library and native features), in each new version launched, so this is a good reason to use this version, also it improves error tracebacks, async programming, exception groups, regular expressions and is up to 10-60% faster than Python 3.10.
+Python has increased the support and functionality for types hints (typing library and native features), in each new version launched, so this is a good reason to use this version, also it improves error tracebacks, async programming, exception groups, regular expressions, and is up to 10-60% faster than Python 3.10.
 https://www.python.org/downloads/release/python-3111/
 
 ### FastAPI 0.96
-This modern, fast high-performance, web framework help me to build the API based on standard Python type hints.
+This modern, fast high-performance, web framework helped me to build the API based on standard Python-type hints.
 I choose it because of its fast performance, fast code, intuitive short and easy, also robust, and production-ready server, and OpenAPI auto-documentation.
 https://fastapi.tiangolo.com/
 
@@ -57,5 +57,5 @@ https://github.com/facebook/react/blob/main/CHANGELOG.md#1820-june-14-2022
 ## External API 
 NY Times best seller books service 
 https://developer.nytimes.com/docs/books-product/1/overviewC
-Create an account and get API key 
-Then set the API_KEY as an env variable of the api project folder
+Create an account and get the API key 
+Then set the API_KEY as an env variable of the API project folder
