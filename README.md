@@ -1,12 +1,12 @@
 # Books Advisor
 
-A Books Advisor is a web application where you can list and visualize the NY times best sellers books.
+A Books Advisor is a web application where you can list and visualize the NY Times' best sellers books.
 The project is a mono repo and contains 2 apps; the React Web front-end and Python API back-end.
 
 ## Getting started
 
 
-### Clone Repo recursively
+### Clone repo
 ```
 $ git clone https://github.com/juanesquintero/books-advisor.git
 ```
@@ -18,7 +18,7 @@ $ git clone git@github.com:juanesquintero/books-advisor.git
 
 ## Run it
 
-Docker helps us to remove the os dependencies on software development this is why we use it here, please install it to run this project https://docs.docker.com/engine/install/
+Docker helps us to remove the OS dependencies on software development this is why we use it here, please install it to run this project https://docs.docker.com/engine/install/
 
 After having Docker and Docker Compose Installed please notice that we have a docker-compose.yml that defines the running parameters for the respective containers needed, you just need to run one unique command:
 
@@ -33,7 +33,7 @@ Python API on http://localhost:8000
 
 
 
-## Teck Stack
+## Tech Stack
 
 Since the suggested technologies are React and Python, I decided to use the latest stable versions of the frameworks (React 18.2) (FastAPI 0.96) and languages (Typescript 4.9) (Python 3.11), to benefit from the latest features and fixes.
 
